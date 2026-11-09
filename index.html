@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Administrativo - Licorería El Buen Gusto</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f6f9; margin: 0; padding: 20px; color: #333; }
+        .container { max-width: 1100px; margin: 0 auto; background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        h1 { color: #2c3e50; font-size: 24px; margin-bottom: 5px; }
+        .subtitle { color: #7f8c8d; font-size: 14px; margin-bottom: 25px; }
+        .kpi-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-bottom: 30px; }
+        .kpi-card { background: #f8f9fa; border-left: 4px solid #4a90e2; padding: 15px 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.02); }
+        .kpi-title { font-size: 12px; color: #7f8c8d; text-transform: uppercase; font-weight: bold; }
+        .kpi-value { font-size: 22px; font-weight: bold; color: #2c3e50; margin-top: 5px; }
+        .modules-title { font-size: 18px; color: #2c3e50; margin-bottom: 15px; font-weight: bold; }
+        .modules-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .module-card { background: #fff; border: 1px solid #e1e8ed; padding: 20px; border-radius: 8px; text-decoration: none; color: inherit; display: flex; align-items: center; justify-content: space-between; transition: 0.2s; box-shadow: 0 2px 5px rgba(0,0,0,0.02); }
+        .module-card:hover { border-color: #4a90e2; transform: translateY(-2px); box-shadow: 0 4px 10px rgba(74,144,226,0.1); }
+        .module-info h3 { margin: 0 0 5px 0; font-size: 16px; color: #2c3e50; }
+        .module-info p { margin: 0; font-size: 13px; color: #7f8c8d; }
+        .arrow { font-size: 18px; color: #4a90e2; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>¡Hola, Administrador!</h1>
+        <div class="subtitle">Bienvenido al sistema de gestión de la Licorería El Buen Gusto. &nbsp;&nbsp;|&nbsp;&nbsp; Lunes, 9 de Noviembre de 2026</div>
+
+        <div class="kpi-row">
+            <div class="kpi-card">
+                <div class="kpi-title">Ventas de hoy</div>
+                <div class="kpi-value">Bs 0.00</div>
+            </div>
+            <div class="kpi-card" style="border-left-color: #27ae60;">
+                <div class="kpi-title">Productos en stock</div>
+                <div class="kpi-value">55</div>
+            </div>
+            <div class="kpi-card" style="border-left-color: #f39c12;">
+                <div class="kpi-title">Clientes registrados</div>
+                <div class="kpi-value">5</div>
+            </div>
+            <div class="kpi-card" style="border-left-color: #e74c3c;">
+                <div class="kpi-title">Pedidos pendientes</div>
+                <div class="kpi-value">1</div>
+            </div>
+        </div>
+
+        <div class="modules-title">Módulos principales</div>
+        <div class="modules-grid">
+            <!-- Enlace que lleva al módulo de Ventas de Odoo -->
+            <a href="http://localhost:8069/web#action=any&model=sale.order&view_type=list" target="_blank" class="module-card">
+                <div class="module-info">
+                    <h3>🛒 Ventas</h3>
+                    <p>Gestiona pedidos y facturación</p>
+                </div>
+                <div class="arrow">➔</div>
+            </a>
+
+            <!-- Enlace que lleva al módulo de Inventario de Odoo -->
+            <a href="http://localhost:8069/web#action=any&model=product.template&view_type=kanban" target="_blank" class="module-card">
+                <div class="module-info">
+                    <h3>📦 Inventario</h3>
+                    <p>Control de stock y productos</p>
+                </div>
+                <div class="arrow">➔</div>
+            </a>
+
+            <!-- Enlace que lleva a la gestión de Usuarios / Ajustes de Odoo -->
+            <a href="http://localhost:8069/web#action=res_users_action_my&menu_id=settings" target="_blank" class="module-card">
+                <div class="module-info">
+                    <h3>👤 Usuarios</h3>
+                    <p>Crea usuarios y asigna roles</p>
+                </div>
+                <div class="arrow">➔</div>
+            </a>
+        </div>
